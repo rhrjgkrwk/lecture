@@ -12,17 +12,27 @@ public class LottoTen {
 		Random r = new Random();
 		System.out.println("<랜덤 로또 추출기>");
 		for (int t = 0; t < 10; t++) { // 로또를 10개 생성해보자.
-			System.out.printf("%-3d번째 로또 : ", t+1);
+			System.out.printf("%-3d번째 로또 : ", t + 1);
 			for (int i = 0; i < arr.length; i++) {
-				int rn = r.nextInt(45) + 1; // random # 추출
-				for (int j = 0; j <= i; j++) { // 이미 나왔던 수인지 chk'
-					if (arr[j] != rn) { // 기존에 안나왔던 수면
-						arr[i] = rn; // 배열에 담는다.
+				while (true) {
+					int rn = r.nextInt(45) + 1; // random # 추출
+					boolean chk = false; // 중복이 있는지 chk 
+					
+					for (int j = 0; j < i; j++) { // 검토하고 중복이 있으면 루프 반복
+						if (rn == arr[j]) {
+							chk = true; //중복이 있으면 true
+							break;
+						}
+					}
+					if (chk==false) { // 중복이 없으면 rn을 arr[i]에 대입
+						arr[i] = rn;
+						break;
 					}
 				}
 			}
 			SelectionSort(arr); // 정렬을 해보자.
-			for (int i = 0; i < arr.length; i++) System.out.print(arr[i]+"\t"); //방금 생성한 로또를 출력해보자.
+			for (int i = 0; i < arr.length; i++)
+				System.out.print(arr[i] + "\t"); // 방금 생성한 로또를 출력해보자.
 			System.out.println();
 		}
 	}
