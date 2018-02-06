@@ -58,3 +58,5 @@ public class SynchronizedGazua extends Thread{
 		else sync1.b();
 	}
 }
+
+
