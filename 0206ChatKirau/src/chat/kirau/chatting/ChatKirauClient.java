@@ -1,4 +1,4 @@
-package chat.kirau;
+package chat.kirau.chatting;
 
 import java.awt.EventQueue;
 import java.net.Socket;
@@ -18,6 +18,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
+import java.awt.Color;
+import java.awt.SystemColor;
 
 public class ChatKirauClient extends JFrame {
 
@@ -47,7 +50,8 @@ public class ChatKirauClient extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public ChatKirauClient() { // 생성시 Member를 받도록 수정.
+	public ChatKirauClient(){
+		setResizable(false); //(Member member) { // 생성시 Member를 받도록 수정.
 		String serverIP = "70.12.109.101"; // 서버 아이피는 일단 내걸로 하잡.
 		int port = 7897; // 임시 포트 설정.
 		
@@ -55,6 +59,9 @@ public class ChatKirauClient extends JFrame {
 		try { // 서버에 접속하고 채팅프로그램을 실행시켜보자.
 			Socket socket = new Socket(serverIP, port); // 소켓을 생성하자.
 			System.out.println("서버에 연결되었습니다.");
+			textArea.setForeground(new Color(31, 44, 61));
+			textArea.setBackground(new Color(255,253,255));
+			textArea.setFont(new Font("맑은 고딕", Font.PLAIN, 13));
 			textArea.setText("서버에 연결되었습니다.");
 
 			ClientSender sender = new ClientSender(socket, name);
@@ -64,17 +71,20 @@ public class ChatKirauClient extends JFrame {
 
 			setTitle("\uCC57\uD0A4\uB77C\uC6B0");
 			//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			setBounds(100, 100, 351, 573);
+			setBounds(100, 100, 340, 573);
 			contentPane = new JPanel();
+			contentPane.setBackground(new Color(51, 51, 51));
 			contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 			setContentPane(contentPane);
 			contentPane.setLayout(null);
 
 			textArea.setEditable(false);
-			textArea.setBounds(12, 10, 311, 453);
+			textArea.setBounds(12, 10, 311, 463);
 			contentPane.add(textArea);
+			textField.setForeground(new Color(31, 44, 61));
+			textField.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
 
-			textField.setBounds(12, 473, 220, 52);
+			textField.setBounds(12, 483, 220, 52);
 			contentPane.add(textField);
 			textField.setColumns(10);
 			textField.addKeyListener(new KeyListener() {
@@ -102,8 +112,11 @@ public class ChatKirauClient extends JFrame {
 					}
 				}
 			});
+			btnNewButton.setBackground(new Color(227,172,27));
+			btnNewButton.setForeground(new Color(31, 44, 61));
+			btnNewButton.setFont(new Font("맑은 고딕", Font.BOLD, 12));
 
-			btnNewButton.setBounds(245, 473, 78, 52);
+			btnNewButton.setBounds(244, 482, 78, 52);
 			contentPane.add(btnNewButton);
 			btnNewButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
