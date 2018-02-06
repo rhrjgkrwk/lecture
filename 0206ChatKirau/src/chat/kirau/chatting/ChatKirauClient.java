@@ -21,6 +21,7 @@ import java.awt.event.ActionEvent;
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.SystemColor;
+import javax.swing.ImageIcon;
 
 public class ChatKirauClient extends JFrame {
 
@@ -72,6 +73,7 @@ public class ChatKirauClient extends JFrame {
 			setTitle("\uCC57\uD0A4\uB77C\uC6B0");
 			//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			setBounds(100, 100, 340, 573);
+			setUndecorated(true);
 			contentPane = new JPanel();
 			contentPane.setBackground(new Color(51, 51, 51));
 			contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -79,12 +81,12 @@ public class ChatKirauClient extends JFrame {
 			contentPane.setLayout(null);
 
 			textArea.setEditable(false);
-			textArea.setBounds(12, 10, 311, 463);
+			textArea.setBounds(12, 10, 316, 492);
 			contentPane.add(textArea);
 			textField.setForeground(new Color(31, 44, 61));
 			textField.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 12));
 
-			textField.setBounds(12, 483, 220, 52);
+			textField.setBounds(12, 512, 229, 52);
 			contentPane.add(textField);
 			textField.setColumns(10);
 			textField.addKeyListener(new KeyListener() {
@@ -116,7 +118,7 @@ public class ChatKirauClient extends JFrame {
 			btnNewButton.setForeground(new Color(31, 44, 61));
 			btnNewButton.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 12));
 
-			btnNewButton.setBounds(244, 482, 78, 52);
+			btnNewButton.setBounds(250, 511, 78, 52);
 			contentPane.add(btnNewButton);
 			btnNewButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
