@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.2" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="com.view.ClientSender" project="ChatKirau" 
+    file="/ChatKirau/src/com/view/ChatKirauClient.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="159" x="126" y="34"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="com.view.Login" project="ChatKirau" file="/ChatKirau/src/com/view/Login.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="171" x="325" y="34"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="com.dao.MemberDao" project="ChatKirau" 
+    file="/ChatKirau/src/com/dao/MemberDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="261" width="186" x="536" y="34"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="com.view.ClientReceiver" project="ChatKirau" 
+    file="/ChatKirau/src/com/view/ChatKirauClient.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="136" x="1090" y="34"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="com.model.Member" project="ChatKirau" file="/ChatKirau/src/com/model/Member.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="423" width="238" x="1266" y="34"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="com.view.ChatKirauClient" project="ChatKirau" 
+    file="/ChatKirau/src/com/view/ChatKirauClient.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="145" x="1544" y="34"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="com.view.Register" project="ChatKirau" 
+    file="/ChatKirau/src/com/view/Register.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="243" width="181" x="1729" y="34"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="com.chat.ChatKirauServer" project="ChatKirau" 
+    file="/ChatKirau/src/com/chat/ChatKirauServer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="225" width="288" x="762" y="34"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="com.chat.ChatKirauServer.ServerReceiver" project="ChatKirau" 
+    file="/ChatKirau/src/com/chat/ChatKirauServer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="143" x="762" y="497"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="com.view.ServerStarter" project="ChatKirau" 
+    file="/ChatKirau/src/com/view/ServerStarter.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="123" x="1950" y="34"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <nesting id="11">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="9"/>  
+  </nesting>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
