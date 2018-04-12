@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<!-- 
+JS의 변수(var로 선언.)
+1. 숫자
+2. 논리값
+3. 문자들
+4. 함수
+5. 객체
+6. undefined : 변수값 미정.
+
+ -->
+<script type="text/javascript">
+var i = 100;
+document.write(i+'<br>');
+i = 'Hello world!';
+document.write(i+'<br><br>');
+
+document.write('- var의 종류를 알아보자.<br>');
+var x;
+document.write(typeof x+'<br>');
+x = function(){};
+document.write(typeof x+'<br>');
+x = 100;
+document.write(typeof x+'<br>');
+x = 10<20;
+document.write(typeof x+'<br>');
+x = new Array();
+document.write(typeof x+'<br>');
+x = 3.14;
+document.write(typeof x+'<br><br>');
+
+
+
+// 변수를 가지고 놀아보자.
+document.write(' 변수를 가지고 놀아보자.<br>');
+var s1 = 'oracle javascript';
+document.write(s1.length + '<br>');
+document.write(s1.toUpperCase() + '<br>');
+document.write(s1.replace('r', 'l') + '<br>');
+document.write(s1.indexOf('script',0) + '<br>');
+document.write(s1.charAt(2) + '<br>');
+
+
+</script>
+
+</body>
+</html>

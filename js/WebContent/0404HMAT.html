@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+ <title>Insert title here</title>
+</head>
+<body>
+	<div id="test"></div>
+	<script type="text/javascript">
+		x = 0;
+		function tmp(second){
+			x = second;
+			timer();
+		}
+		function timer() {
+			
+			var str = '<h1>' + parseInt(x / 60) + '분' + (x % 60) + '초 남았다.';
+			document.getElementById("test").innerHTML = str;
+			id = setTimeout('timer()', 1000);
+			if (x==0) {
+				clearTimeout(id);
+				document.getElementById("test").innerHTML = "<h1>시간 종료!</h1>";			
+			}
+			x--;
+		}
+		
+	</script>
+	<input type="button" value="언어(25문/30분)" onclick="tmp(30*60)">
+	<input type="button" value="논리(15문/25분)" onclick="tmp(25*60)">
+	<input type="button" value="자료(20문/30분)" onclick="tmp(30*60)">
+	<input type="button" value="정보(25문/30분)" onclick="tmp(30*60)">
+	<input type="button" value="도식(25문/30분)" onclick="tmp(30*60)">
+
+</body>
+</html>

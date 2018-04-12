@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CALCULATOR</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var opr1 = parseInt(prompt("1번째 숫자"));
+		var opt = prompt("연산자");
+		var opr2 = parseInt(prompt("2번째 숫자"));
+		var res;
+		if (opt=="+") {
+			res = opr1+opr2;
+		} else if (opt=="-") {
+			res = opr1-opr2;
+		} else if (opt=="/") {
+			res = opr1/opr2;
+		} else if (opt=="*") {
+			res = opr1*opr2;
+		}
+			
+		document.write(opr1 + opt + opr2 + "="+ res)
+	
+	</script>
+</body>
+</html>

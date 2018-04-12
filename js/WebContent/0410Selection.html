@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Selection</title>
+<style type="text/css">
+form {
+	text-align: center;
+}
+</style>
+<script type="text/javascript">
+	function isValid(form) {
+		// 		출력
+		open("fishing.html")
+		if (form["sex"]) {
+// 			alert(form["sex"].value);
+		}
+			
+		var tmp = "";
+		for (var i = 0; i < form["major"].length; i++) {
+			if (form["major"][i].checked) { //체크된 것만 가져오자.
+				tmp += form["major"][i].value + " ";
+			}
+		}
+		alert(tmp);
+		if (form["classNum"].value!="0") {
+			alert(form["classNum"].value + "반이 선택되었다.")
+		}
+		
+	}
+</script>
+</head>
+<body>
+	<!-- 학년/반/성별 -->
+	<form>
+		[성별]<br> <input type="radio" name="sex" value="남">남 <input
+			type="radio" name="sex" value="여" checked="checked">여 <br> 
+			
+			
+			
+			[전공]<br> 
+			<input
+			type="checkbox" name="major" value="전산">전산 <input
+			type="checkbox" name="major" value="사회">사회 <input
+			type="checkbox" name="major" value="교육">교육 <input
+			type="checkbox" name="major" value="경영">경영<br>
+			
+			
+			
+		[반선택]<br> <select id="classNum">
+			<option value="0">선택해보자</option>
+			<option value="1">1반</option>
+			<option value="2">2반</option>
+			<option value="3">3반</option>
+			<option value="4">4반</option>
+			<option value="5">5반</option>
+			<option value="6">6반</option>
+			<option value="7">7반</option>
+		</select> <br> <input type="button" value="검증"
+			onclick="isValid(this.form)">
+	</form>
+
+
+</body>
+</html>

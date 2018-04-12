@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Board</title>
+<style type="text/css">
+h1 {
+	font-family: fantasy;
+	font-size: 90px;
+	text-align: center;
+	background-color: skyblue;
+	color: red;
+	border: solid 2px green;
+}
+
+table {
+	margin: 15px auto;
+	border-collapse: collapse;
+}
+
+td, th {
+	text-align: center;
+	vertical-align: center;
+	border: solid 1px green;
+	width: 20%;
+}
+</style>
+<!-- 1:게시물1:이창희:2 -->
+</head>
+<body>
+	<h1>My Board</h1>
+
+	<table id="add">
+		<tr>
+			<th>Num</th>
+			<th>Title</th>
+			<th>Author</th>
+			<th>Views</th>
+		</tr>
+	</table>
+
+	<script>
+		var count = 1;
+		var id = setInterval(printTable, 1000);
+		function printTable() {
+			x = prompt('게시물을 작성해보자.');
+			var str = '<tr>';
+			var out = x.split(":");
+			for (var j = 0; j < out.length; j++) {
+				str += '<td>';
+				str += out[j];
+				str += '</td>';
+			}
+			str += '</tr>';
+			document.getElementById("add").innerHTML += str;
+			count++;
+			if (count > 5) {
+				clearInterval(id);
+			}
+		}
+	</script>
+
+
+
+</body>
+</html>

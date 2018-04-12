@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+h1{
+	text-align: center;
+	color: black;
+	border-bottom: solid 2px green;
+	border-top: solid 2px green;
+	padding : 10px;
+	background-color: lightgreen;
+}
+div {
+	width: 70%;
+	height: 500px;
+	margin: 15px auto;
+	text-align: center;
+}
+
+#emp {
+	vertical-align: top;
+	height: 40%;
+	width: 98%;
+	margin: 0px;
+	resize: none;
+}
+
+input[type="button"] {
+	height: 8%;
+	width: 100%;
+	margin: 0px;
+}
+
+table {
+	height: 40%;
+	width: 100%;
+	margin: 0px;
+	border-collapse: collapse;
+}
+
+td {
+	padding: 2px;
+	text-align: center;
+	border: solid 1px gray;
+}
+</style>
+</head>
+<body>
+	<script type="text/javascript">
+		var chk = false;
+		function Emp(id, name, salary, dept) {
+			this.id = id;
+			this.name = name;
+			this.salary = salary;
+			this.dept = dept;
+			this.date = new Date().toLocaleDateString();
+			this.toString = function() {
+				return this.id + " " + this.name + " " + this.salary + " "
+						+ this.dept + "<br>";
+			}
+		}
+		function insertEmp() {
+			var list = document.getElementById("emp").value;
+			list = list.split("\n");
+			var error = new Array();
+			var emp = new Array();
+			for (var i = 0; i < list.length; i++) {
+				var tmp = list[i].split(/[,:-]/);
+				if (tmp.length==4) {
+					emp[i] = new Emp(tmp[0], tmp[1], tmp[2], tmp[3]);
+				}
+				else if (tmp.length==1 && tmp[0]=="") continue; 
+				else error.push(i+1);
+			}
+			
+			if (error.length>0) {
+				document.getElementById("emessage").innerHTML = error.join(", ")+"번 데이터 입력형식 오류";
+			}
+			else {
+				emp.sort(function(a,b){return parseInt(b.salary)-parseInt(a.salary);});
+				printRes(emp);
+			}
+		}
+		function printRes(empList) {
+			var str = "";
+			
+			if (!chk) {
+				str += "<tr><th>사번</th><th>이름</th><th>급여</th><th>부서</th><th>날짜</th></tr>";
+				chk = true;
+			}
+
+			for (var i = 0; i < empList.length; i++) {
+				str += "<tr>";
+				str += "<td>" + empList[i].id + "</td>";
+				str += "<td>" + empList[i].name + "</td>";
+				str += "<td>" + empList[i].salary + "원</td>";
+				str += "<td>" + empList[i].dept + "</td>";
+				str += "<td>" + empList[i].date + "</td>";
+				str += "</tr>";
+			}
+			document.getElementById("res").innerHTML += str;
+		}
+	</script>
+	<h1>사원 정보</h1>
+	<div>
+		<textarea id="emp" placeholder="사번:사원명-급여,부서명"></textarea>
+		<br> <input type="button" value="정보저장" onclick="insertEmp()">
+		<h5 id="emessage"></h5>
+		<table id="res">
+		</table>
+		
+	</div>
+
+</body>
+</html>
+
+
+<!-- 
+반복{
+0.emp id 태그에 다음과 같이 입력:공백 중단
+1. emp id 태그에 다음과 같이 입력하고
+100:이사원-56000,교육부
+200:박사원-156000,경영부
+300:김사원-526000,잡부
+400:최사원-5156000,노동부
+500:장사원-5661000,바부
+600:정사원-16000,바부
+
+2. 등록 버튼을 클릭하면 insertEmp 함수를 호출한다.
+3. 입력 데이터를 사번:사원명-급여,부서명의 형식으로
+분류하여 Employee 타입의 객체로 생성한다.
+(String.split(/, 또는 : 또는 - /)  )
+이 때, 등록날짜는 현재 시간으로 생성한다.
+4. 3의 객체를 empArray 배열에 저장한다.
+}
+5. empArray를 급여순으로 정렬한다.
+6. empArray를 result id를 가진 태그 자리에 
+출력한다.
+
+
+a
+
+
+
+
+
+
+
+
+
+
+
+-->

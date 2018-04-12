@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트정보</title>
+<script src="js/jquery-3.3.1.js"></script>
+<script>
+$(document).ready(function(){
+   $('img').on('mouseover',function(e){
+      var inform=e.type+ " : "+e.which;
+      alert(inform);
+      
+      var pointer= 
+         "x좌표=" + e.pageX + ": y좌표=" +e.pageY;
+      $("#result").html(pointer);
+      $("#result").css('color','red');
+      $("#result").css('border',' solid 2px red');
+   });
+   $('img').on('mouseout',function(){  //변수선언x
+      $("#result").html('이미지외부');
+      $("#result").css('color','blue');
+      $("#result").css('border',' solid 2px black');
+   });
+   
+});
+</script>
+</head>
+<body>
+<div id="result"></div>
+<img src="images/cat4.jpg" width=100 height=80>
+</body>
+</html>

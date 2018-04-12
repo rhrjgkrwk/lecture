@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- jQuery를 import하는 두 가지 방법이 있당/ -->
+<!-- 1. --><script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<!-- 2. <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
+
+
+<script type="text/javascript">
+/*
+1. jQuery 설치 방법
+ a. jquery-버전명.js 을 webContent 폴더에 저장.
+ b. 웹에서 바로 가지고 와도 됨.
+ - a가 더 안정적임.
+
+2. jQuery 특징
+ - 크로스 브라우징이 가능(브라우저 독립적) 브라우저간 차이를 jquery 안에서 해결.
+
+
+3. jQuery의 기본 구조
+ - 기본 구조
+ - $(선택자).기능함수(); = ex> document.getElementByXXX("선택자") 과 같은 효과이다.
+ 	1. 선택자(css와 비슷)
+
+ - 기본 함수 구조
+ - $(document).ready = function(){}
+ - document.ready는 기존 window.onload와 같다. html문서가 전부 로드되고 난 뒤 실행시키겠다는 뜻.
+
+
+
+
+*/
+/* jQuery 기본 구조
+	$(document).ready(
+		function() {
+			$(selector).기능함수
+		}
+	);
+ */
+
+
+
+
+//   4. 선택자
+
+
+
+
+$(document).ready(
+	function() {
+		////////////////////tag이름으로 선택////////////////////
+		$('h1').css("color","#501155");
+		$('a').css("color","#012244");
+		$('input').css("color","#00ff10");
+
+		///////////////select 태그에 포함된 옵션 태그/////////////////////
+		$('select > option').css("background-color","green");
+
+		/////////특정 태그의 attr로 선택 : 정규표현식의 방법을 이용할 수 있다.//////////////
+				// 			tag[attr$=XX] : XX로 끝나는 것 찾아와라
+				// 			tag[attr^=XX] : XX로 시작하는 것 차자아와라
+				// 			tag[attr*=XX] : XX를 포함하는 것 차자아와라
+				// 			tag[attr=XX] : XX와 일치하는 것 차자아와라
+		$('input[value$=입력]').css("color","red");
+		$('input[value^=java]').css("color","blue");
+		$('input[value*=텍스트]').css("color","pink");
+
+
+		//////////////id로 선택해보자./////////////////
+		$('#first').css("background-color","green");
+
+		////////////class로 선택해보자.//////////////
+		$('.blue').css("background-color","indigo");
+
+		////////////select tag에서 선택된 옵션을 가져와보자.//////////////////////
+		$('option:selected').css("background-color","lightblue");
+
+		//////////태그명:키워드조건////////////////////////////////
+		/*
+		$('tr:first') //처음 tr태그
+		$('tr:last') //마지막 tr태그
+		$('tr:lt(4)') //lessthan(4) tr태그 index가 4보다 작은 것
+		$('tr:gt(4)')
+		$('tr:eq(4)')
+		 */
+
+		////////////////이벤트를 만들어보자.////////////////////////
+		$('input[type=button]').on('click', function(){
+			//on + click, load, keyup/down ... on+이벤트 이름 형식, 어떤 이벤트를 발생시킬지 함수를 정의해준다.
+
+		});
+
+	}
+);
+
+
+</script>
+<style type="text/css">
+	h1 {
+	color: red;
+}
+</style>
+</head>
+<body>
+	<h1 id="first">시작</h1>
+	<a class="blue" href="">Link</a><br>
+	<input class="blue" type="text" value="텍스트 입력"><br>
+	<input type="password" value="암호입력"><br>
+	<input type="radio" value="java">java<br>
+	<input type="checkbox" checked="checked" value="jquery">jquery<br>
+	<h1>저녁뭐묵??ㅇㅅㅇ</h1>
+	<select>
+		<option>자장</option>
+		<option>잠봉</option>
+		<option>탕수육</option>
+		<option>칼국수</option>
+		<option>고기</option>
+		<option selected="selected">회</option>
+	</select>
+</body>
+</html>

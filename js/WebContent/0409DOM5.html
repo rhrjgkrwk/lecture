@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div {
+	background-color: lightgreen;
+}
+</style>
+
+<script type="text/javascript">
+	/* 
+	 <DOM을 정리해보자> : document object model
+	 노드 구성
+	 내용 변경 : xxx.innerHTML
+	 속성 변경 : xxx.attr명 
+	 ex) xx.style = "color: red;";
+	 ex) xx.style.backgroundColor = 'yellow';
+	 (JS는 -을 포함하지 못한다. 그래서 카멜기법으루 바꿔써준다. background-color-->backgroundColor)
+	 */
+
+	/* 
+	노드 생성
+	1. 태그 노드 :document.createElement() = ''
+	2. 속성 노드 : tag.attr로 접근
+	3. 텍스트 노드 : document.createTextNode()
+	
+	노드를 넣을 위치 탐색
+	노드 추가.
+	
+	
+	 */
+	var cnt = 0;
+	function appendNode(text) {
+// 		var node = document.createTextNode("메롱"+text);
+// 		document.getElementById("here").appendChild(node);
+// 		사실 위의 방법이 DOM에서 정석이지만 아래와 같은 방법으로 훨씬 더 많이 쓰인다.
+		document.getElementById("here").innerHTML += "DDD";
+		
+// 		새로운 img 태그를 추가해보자.
+		var imgTag = document.createElement("img");
+		imgTag.src = "images/cat"+((cnt++)%5+1)+".jpg";
+		imgTag.style = "width: 300px; height: 300px; border: solid 2px green;";
+		
+		
+		//append하면 parent 노드의 가장 마지막에 추가가된다.
+		document.getElementsByTagName("body")[0].appendChild(imgTag);
+		
+		//parent의 첫번째 자식 앞에 넣는다.
+		var parent = document.getElementsByTagName("body")[0];
+		parent.insertBefore(imgTag, parent.firstChild); 
+		
+		//node 삭제
+		parent.removeChild("img");
+		
+	}
+	 
+	function remove(){
+		var parent = document.getElementsByTagName("body")[0]; 
+		var child = document.getElementsByTagName("img")[0];
+		//node 삭제
+		parent.removeChild(child);
+	}
+	 
+</script>
+
+</head>
+<body>
+	<div id="here" onclick="appendNode('메로롱')">Click</div>
+	<div id="here" onclick="remove()">Click</div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style media="screen" type="text/css">
+* /*전체선택자*/ {
+	background-color: yellow;
+}
+
+#first /*id 선택자. : #을 붙이고 id를 입력한다.*/ {
+	background-color: black;
+	color: yellow;
+	border: soild 3px red;
+}
+
+.second /*class 선택자 : .클래스명*/ {
+	background-color: blue;
+	color: red;
+	font-size: 50px;
+	font-family: 궁서;
+}
+
+input[type=text] /* 태그 내의 속성으로 선택해보자.*/ {
+	background-color: red;
+}
+
+h1, a, div /* 여러개의 태그를 한번에 지정해보자. */ {
+	font-family: 맑은고딕;
+}
+
+div a /* div에 포함된 모든 a태그 선택 */ {
+	border: 3px soild red;
+	background-color: blue;
+	font-size: 25px;
+}
+
+div>a /* div에 포함된 직계후손 a태그 선택 */ {
+	border: 6px soild red;
+}
+
+/* hover, visited, link 에 관련된 attr를 만져보자. */
+
+
+</style>
+<title>아이우에오</title>
+</head>
+<body>
+
+	<span id="first">스팬 태그이다.0</span>
+	<br>
+	<span>스팬 태그이다.1</span>
+	<br>
+	<span class="second">스팬 태그이다.2</span>
+	<br>
+	<font class="second">폰트 태크이다.0</font>
+	<br>
+	<p class="second">피 태그이다.0</p>
+	<br>
+
+
+	<p>
+		텍스트 입력 : <input type="text"></input>
+	</p>
+
+
+	<!-- a, h1, div 태그 모두 맑은고딕으로 바꿔보자. -->
+	<a href="b.html">a 태그 링크한다.1</a>
+	<div>div태그이다.1</div>
+	<div>
+		<a href="b.html">h2 a태그이다.2</a>
+	</div>
+	<h1>h1태그다</h1>
+
+
+</body>
+</html>

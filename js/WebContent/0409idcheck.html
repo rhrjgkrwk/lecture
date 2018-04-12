@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+ 
+</head>
+<body>
+	<p id="result"></p>
+	<input type="button" value="창닫기" onclick="window.close()">
+	
+	
+	
+	
+	<script type="text/javascript">
+ 	//부모 창에서 정보를 가져와서 중복검살흘 해야한당.
+ 	var id = window.opener.document.getElementById("id").value;
+ 	
+ 	if (id=='java' || id == 'script') {
+		var res = id + "는 사용가능한 아이디다.";
+		window.document.getElementById("result").innerHTML = res;
+	}
+ 	else {
+ 		var res = id + "는 사용 불가능한 아이디다.";
+ 		window.document.getElementById("result").innerHTML = res;
+ 	}
+ </script>
+</body>
+</html>

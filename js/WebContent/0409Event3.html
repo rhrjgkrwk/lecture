@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- 
+<Event 정리>
+onload/onunload : HTML 문서 로드/떠나는 시점
+onfocus/onblur : 입력창 포커스/블러
+onmouseover/leave(out) : 마우스 over or not
+onclick : 마위스 클릭
+
+onkeypress : 키를 누르고 있는 상태
+keyup : 키 눌렀다가 떼어낼때 - 이걸로 처리하면 된다.
+keydown : 키 누르기 시작
+
+ -->
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/bootstrap.css">
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript">
+	function big() {
+		document.getElementById("imgTag").width += 300;
+		document.getElementById("imgTag").height += 100;
+	}
+	function small() {
+		document.getElementById("imgTag").width -= 300;
+		document.getElementById("imgTag").height -= 100;
+	}
+</script>
+<style type="text/css">
+</style>
+<title>헤헤헤</title>
+</head>
+<body>
+	
+	<div style="text-align: center;">
+	<img id="imgTag" alt="image" src="images/cat4.jpg" width="300" onmouseover="big()"
+		onmouseleave="small()">
+		<input id="id" type="text" placeholder="ID" onfocus="focusEvent()" onblur="blurEvent()"><br>
+		<input id="pw" type="password" placeholder="PW" onblur="isValid()"><br>
+		<div id="pwchk"></div>
+<!-- 		radio 버튼 사용시 name을 같게 해주어야한다. -->
+		<input id="gender" name="gender" type="radio">M
+		<input id="gender" name="gender" type="radio">F<br>
+		
+		<input type="button" value="체크" onclick="isValid()">
+	</div>
+</body>
+</html>
+

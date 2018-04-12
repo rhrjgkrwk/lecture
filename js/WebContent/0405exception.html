@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function guess(){
+			try{
+			var real = 89;
+			var num = document.getElementById("num").value;
+			if (num == "") throw "공백이다."; //에러가 발생하면 해당 메세지가 catch문의 변수에 들어간다.
+			if (isNaN(num)) throw "문자다.";
+			if (num > real) throw "큼";
+			if (num < real) throw "작음";
+			if (num == real) throw "성공";
+			} catch(e){
+				document.getElementById("res").innerHTML = "<h3>힌트 : "+e+"</h3>";
+			}
+		}
+	</script>
+	<input type="text" id="num">
+	<input type="button" value="dd" onclick="guess()">
+	<div id="res"></div>
+</body>
+</html>

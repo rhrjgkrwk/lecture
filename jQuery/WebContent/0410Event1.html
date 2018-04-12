@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<script type="text/javascript">
+	////////////////이벤트를 만들어보자.////////////////////////
+	$('document').ready(function() { //시작
+		var count = 1;
+
+		/////////Event ON/OFF/////////////
+
+		//btn1에 이벤트를 부여해보자.
+		$('#btn').on('click', function tmp() {
+			//on + click, load, keyup/down ... on+이벤트 이름 형식, 어떤 이벤트를 발생시킬지 함수를 정의해준다.
+			//$('#res').text("button1 " + count + "번 눌렀다.");
+			$('#res').html("button1 " + count + "번 눌렀다.");
+			
+			count++;
+		});
+
+		//btn1의 이벤트 처리를 취소해보자.
+		$('#btn2').on('click', function() {
+			$('#btn').off('click'); //btn1에 부여된 이벤트를 끈다.
+			//btn1에 부여된 이벤트는 더이상 반응하지 않는다.
+		});
+
+		//btn3 클릭시 btn1이벤트를 1번만 이벤트 발생하도록 지정
+		$('#btn3').on('click', function() { //on을 one으로만 바꿔주자.
+			$('#btn').one('click', function tmp() {
+				//on + click, load, keyup/down ... on+이벤트 이름 형식, 어떤 이벤트를 발생시킬지 함수를 정의해준다.
+				$('#res').text("button1 " + count + "번 눌렀다.");
+				count++;
+			});
+		});
+	});
+</script>
+
+</head>
+<body>
+	<input id="btn" class = "btn" type="button" value="click">
+	<input id="btn2" class = "btn" type="button" value="stop-click">
+	<input id="btn3" class = "btn" type="button" value="once">
+	<br>
+	<div id="res" class="btn"></div>
+</body>
+</html>

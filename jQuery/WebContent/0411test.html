@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>j쿼리를 이용한 DOM변경</title>
+<script src="js/jquery-3.3.1.js"></script>
+<script>
+   $(document).ready(function(){
+      //innerHTML 조회 ==>html() / text()
+      $('#btn').on('click', function() {
+         //alert($('#here').html()); //태그까지 문자로 인식
+         alert($('#here').text());    
+         $('#name').val('홍길동');//input태그만
+         
+         $('#here').html("<h3>" + $('#name').val() + "<h3>");
+         //$('#here').html($('#name').attr('type'));//getter용도
+         //$('name').attr('type','password');//바꾸는용됴
+         //$('#here').html($('#name').attr('type'));//getter용도
+         
+         /* attr('속성명'):속성값 조회
+         attr('value')->입력내용 value 값 변경 을 하고싶은데   attr은 변경된 값을 감지하지 못한다. ->prop 은 감지할 수 있다. 
+         attr('속성명','값'): 속성값 변경
+         attr() 함수가 jquery에서 checking 바꾸는 클릭 인식X
+         prop : 태그가 가진 속성을 나타냄 */
+         //$('#here').html($('input:checkedbox:eq(0)').attr("checked")); //check를 1로 바꿔도 안나와
+         //$('#here').html($('input:checkedbox:eq(0)').prop("checked")); //얘는 나오지
+         
+         //$('#name').remove();  //선택 태그 자체를 삭제하라
+         $('#name').empty();   //선택된 태그 내부를 삭제하라 
+      });
+   });
+</script>
+</head>
+<body style="background-color: orange;">
+   이름입력 <input type=text id="name"><br>
+   <input type="checkbox" value="1">1
+   <input type="checkbox" value="2" checked="checked">2
+   <input type="checkbox" value="3">3
+   <input type=button id="btn" value="전송">
+   <br>
+   <div id="here">   <h1>여기에 결과 출력</h1>   </div>
+</body>
+</html>

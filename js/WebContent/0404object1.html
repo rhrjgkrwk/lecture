@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 1. Car 객체를 함수로 정의
+		function Car(model, speed, color) {
+			//member var
+			this.model = model;
+			this.speed = speed;
+			this.color = color;
+			//member method
+			this.brake = function(){this.speed-=10;}
+			this.accel = function(){this.speed+=10;}
+			//tostring을 오버라이딩해보자. 
+			//JS도 java처럼 object 객체를 상속받고 있고 메서드로 tostring을 가지고 있다.
+			//java처럼 .toString()을 생략할 수 있다.
+			this.toString = function(){return car1.model+'  '+car1.color+'  '+car1.speed+'<br>';}
+		}
+
+		// 2. Car 객체를 변수 함수로 정의
+		var Car2 = function(model, speed, color) {
+			//member var
+			this.model = model;
+			this.speed = speed;
+			this.color = color;
+			//member method
+			this.brake = function(){this.speed-=10;}
+			this.accel = function(){this.speed+=10;}
+		}
+		
+// 		3. 객체 상수로 객체 생성
+		var Car3 = { //생성자 함수가 아니다. 멤버들은 ;이 아닌 ,로 구분한다
+			//member var
+			this.model : 'jeep',
+			this.speed = 100,
+			this.color = 'red',
+			//member method
+			this.brake : function(){this.speed-=10;},
+			this.accel : function(){this.speed+=10;}
+		};
+		
+		
+
+		var car1 = new Car('730i',100,'red');
+		
+		document.write(car1);
+		car1.brake();car1.brake();car1.brake();car1.brake();
+		document.write(car1);
+		car1.accel();car1.accel();car1.accel();car1.accel();car1.accel();car1.accel();
+		document.write(car1.toString());
+		car1.color = 'white';
+		document.write(car1);
+		
+		var car2 = new Car('a5',200,'black');
+		
+		document.write(car2);
+		
+		
+// 		car2에만 특정 메서드를 줘보자.
+		car2.only = function(){document.write('only' + car2);};
+		car2.only();
+		
+// 		car2에만 특정 변수를 줘보자.
+		car2.company = "Audi";
+		document.write('company : ' + car2.company);
+		//car1.only(); //car2만 가진 메서드이므로 실행 안된다.
+		
+		document.only = "hehehe";
+		document.write(document.only+'<br>');
+		
+		
+//프로토타입을 이용하여 객체 공유 메서드/변수를 추가할 수 있다.
+		//이때에는 객체명을 이용하여 추가 해야한다.
+		// 객체명.prototype.추가할변수/함수명 = 변수/함수 선언
+		Car.prototype.all = function(){ 
+			document.write("all"+'<br>');
+		};
+		//프로토타입을 이용하여 추가하면 해당 인스턴스 모두에서 메서드/변수를 사용할 수 이따.
+		car1.all();
+		car2.all();
+		
+		var i = function(){this.a = 100;};//생성자 함수
+		var ii = new i(); //object
+		
+		document.write(typeof i+'<br>');
+		document.write(typeof ii+'<br>');
+		document.write(ii.constructor);	//ii를 생성한 생성자함수를 가져온다. constructor 변수는 object 객체를 상속하여 존재.
+		
+		
+		
+		
+		
+// 		객체 생성 방법
+// 		1. 생성자 함수 호출
+		var 변수명 = new 객체명(인자......);
+// 		2. 객체 상수 생성 = JSON : JS Object Notation
+		var 변수명 = {멤버:값, 멤버메서드:메서드, ......};
+		
+		
+		
+	</script>
+</body>
+</html>

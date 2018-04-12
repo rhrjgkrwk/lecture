@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Email 검증</title>
+<link rel="stylesheet" href="css/bootstrap.css">
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript">
+	var reg = /^\w{1,8}@[a-zA-Z]\.[co\.kr|go\.kr|org|com|net]{1}$/;
+</script>
+</head>
+<body>
+	<!-- id는 8자리까지만 알파벳+숫자   @   1자리 이상의 영문자 . (co.kr|go.kr|org|com|net)  -->
+	<input type="text" name="email" id="email">
+	<input type="button" class="btn">
+
+
+</body>
+</html>

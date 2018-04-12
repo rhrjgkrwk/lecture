@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+	<script type="text/javascript">
+		//1. 로그인 하셨습니까? confirm - t/f
+		var chk = confirm("로그인 했니?");
+		
+		
+		if (chk) {
+			logout();
+		} else {
+			login();
+		}
+		//2. 로그인되어있으면 O
+		function logout(){
+			document.write('<a href="#">내 정보보러가기</a><br>');
+			document.write('<input type="button" value="Log Out">')			
+		}; 
+		
+		//3. 로그인안되어있으면 X
+		function login(){
+			document.write('<form action=""><input type="text" placeholder="ID"><br><input type="password" placeholder="PW"></form>');
+			document.write('<input type="button" value="Sign In">')
+		}
+		
+	</script>
+	
+</body>
+</html>

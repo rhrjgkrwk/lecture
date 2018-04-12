@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<meta charset="UTF-8">
+<title>Color</title>
+<script type="text/javascript">
+	$(document).ready(function() {
+		
+		$('input[type=radio]').on('click', function() {
+			if ($(this).val()=="lightblue") {
+				$('body').css("background-color","lightblue");
+			}
+			else if ($(this).val()=="lightgreen") {
+				$('body').css("background-color","lightgreen");
+			}
+		});
+ 	});
+</script>
+</head>
+<body>
+	<div>
+		<input type="radio" name="colorpicker" value="lightblue">하늘색 
+		<input type="radio" name="colorpicker" value="lightgreen">녹색
+	</div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.3.1.js"></script>
+<script>
+	$(document).ready(function() {
+		//$('.a').removeClass('a'); //a라는 클래스명이 붙은 태그를 선택하여 그 안에 a라는 클래스 속성을 없애라.
+		//$('.a').addClass('b'); //class='a'를 가진 태그를 찾아서 class='b'로 설정하자.
+		$('td:nth-child(3n)').addClass('b'); //class='a'를 가진 태그를 찾아서 class='b'로 설정하자.
+		
+// 		$('td:odd').css("background-color", "pink");
+// 		$('td:odd').css("color", "blue");
+// 		$('td:odd').css("font", "궁서 20px");
+// 		$('td:odd').css("border", "solid 3px orange");
+	});
+</script>
+<style>
+h1 {
+	color: red;
+}
+
+table {
+	border: solid 2px;
+}
+
+td {
+	border: solid 2px purple;
+}
+.a{
+	color: blue;
+	background-color: gray;
+	font: 24px 궁서 italic;
+	border: solid orange 3px;
+}
+.b{
+	color: white;
+	background-color: black;
+	font: 30px 궁서 italic;
+	border: solid red 5px;
+}
+
+</style>
+</head>
+<body>
+	<h1>저녁에 뭐 먹을까요?</h1>
+	<select>
+		<option>짜장</option>
+		<option>짬뽕</option>
+		<option selected="selected">탕수육</option>
+		<option>군만두</option>
+		<option>우동</option>
+	</select>
+
+	<h1>게시판이에요</h1>
+	<table>
+		<tr>
+			<td>번호</td>
+			<td class="a">제목</td>
+			<td class="b">작성자</td>
+		</tr>
+		<tr>
+			<td>번호</td>
+			<td class="a">제목</td>
+			<td class="b">작성자</td>
+		</tr>
+		<tr>
+			<td>번호</td>
+			<td class="a">제목</td>
+			<td class="b">작성자</td>
+		</tr>
+		<tr>
+			<td>번호</td>
+			<td class="a">제목</td>
+			<td class="b">작성자</td>
+		</tr>
+		<tr>
+			<td>번호</td>
+			<td class="a">제목</td>
+			<td class="b">작성자</td>
+		</tr>
+		<tr>
+			<td>번호</td>
+			<td class="a">제목</td>
+			<td class="b">작성자</td>
+		</tr>
+		<tr>
+			<td>번호</td>
+			<td class="a">제목</td>
+			<td class="b">작성자</td>
+		</tr>
+		<tr>
+			<td>번호</td>
+			<td class="a">제목</td>
+			<td class="b">작성자</td>
+		</tr>
+	</table>
+</body>
+</html>
+
+
+

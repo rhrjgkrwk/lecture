@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var field = ['사번', '이름', '급여', '부서'];
+		var data = new Array();
+		//사번 이름 급여 부서명을 입력
+		for (var i = 0; i < 4; i++) {
+			data[i] = prompt(field[i]);
+		}
+		for (var i = 0; i < data.length; i++) {
+			document.write(field[i]+' : '+data[i]+'<br>');
+		}
+	</script>
+</body>
+</html>

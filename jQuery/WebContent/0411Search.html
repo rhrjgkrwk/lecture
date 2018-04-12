@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Search Engine</title>
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/bootstrap.js"></script>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<script type="text/javascript">
+	$('document').ready(function() {
+		$('#all').on('click', function() {
+			if ($('#all').prop('checked')) {
+				//모든 체크박스 체크
+				$("input[type=checkbox]").prop('checked', true);
+			} else {
+				//모든 체큽막스 해제
+				$("input[type=checkbox]").prop('checked', false);
+			}
+		});
+
+		$('input[name="chk"]').on('click', function() {
+			var check = true;
+			for (var i = 0; i < $('input[name="chk"]').length; i++) {
+				if ($('input[name="chk"]').eq(i).prop('checked')==false) {
+					check = false;
+				}
+			}
+			if (check) {
+				$('#all').prop('checked',true);
+			}
+			else {
+				$('#all').prop('checked',false);
+			}
+		});
+		
+		$('#search').on('click', sear = function(){
+			var str = new Array();
+			for (var i = 0; i < $('input:checkbox:checked').length; i++) {
+				str.push($('input:checkbox:checked').eq(i).val());
+			}
+			alert(str.join('-')+' '+$('#keyword').val());
+		});
+		$('#keyword').keydown(function(key){
+			if (key.keyCode == 13) {
+				sear();
+			}
+		})
+		
+		
+	});
+</script>
+<style type="text/css">
+h1 {
+	font: 80px fantasy;
+	text-align: center;
+	color: green;
+}
+
+form {
+	width: 50%;
+	margin: 15px auto;
+	text-align: center;
+	margin: 15px auto;
+}
+input[type='button'] {
+	width: 100%;
+}
+</style>
+</head>
+<body>
+	<h1>NAVER</h1>
+	<form action="">
+		<label class="checkbox-inline"> <input id="all"
+			type="checkbox" value="모두">모두
+		</label> <label class="checkbox-inline"> <input name="chk"
+			type="checkbox" value="제목">제목
+		</label> <label class="checkbox-inline"> <input name="chk"
+			type="checkbox" value="내용">내용
+		</label> <label class="checkbox-inline"> <input name="chk"
+			type="checkbox" value="작성자">작성자
+		</label> <br> <input class="form-control" id="keyword" type="text"
+			placeholder="검색할 키워드를 입력해보자."> <input id="search"
+			type="button" class="btn btn-success" value="검색">
+	</form>
+</body>
+</html>

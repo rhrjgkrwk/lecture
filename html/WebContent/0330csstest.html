@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>CSS를 배워보자</title>
+<style media="screen">
+/* 		글꼴 여러개 적으면 순서대로 적용 (우선순위) */
+p {
+/* 	font-family: 궁서 굴림 sans-serif; */
+/* 	font-size: 4em; */
+/* 	color: white; */
+	/* 	font관련된 정보들을 한뻔에 쓸 수 있다. */
+	font: 15px 궁서 yellow;
+	border: solid 2px red;
+/* 	text-transform은 text를 변형한다. 영어에만 적용되며 대소문자 전환등이있다. */
+/* 	text-transform: uppercase;  */
+	text-transform: capitalize;
+/* 	음영의 길이 색깔을 지정한다. 순서대로 text-shadow: 아래px 오른쪽px 흐림처리정도px 색상;*/
+	text-shadow: 2px 4px 5px red;
+/* 	단어가 길때 자동으로 줄바꿈해준다. */
+	word-wrap: break-word;
+}
+
+h1 {
+	border-radius: 14%;
+	border: solid 3px red;
+	font-family: '궁서';
+	font-size: 5em;
+	/* em은 상대크기 2em의 경우 부모태그의 2배 */
+	/* px,pt는 절대크기 */
+	/* 1px는 1/96 inch */
+	/* xx-small, x-small, large... 은 브라우저 기본 사이즈 기준 상대크기 */
+	color: red;
+	font-weight: bold;
+}
+
+body {
+	background-color: rgb(123, 135, 133);
+	background-image: url("images/cat.jpg");
+	background-repeat: no-repeat;
+}
+
+div{
+	width: 100px;
+	height: 50px;
+	padding: 20px;
+	border: solid 3px green;
+	background-color: yellow;
+	resize = both;
+	overflow: auto;
+/* 	margin 좌우 값을 auto로 주면 화면의 가운데 정렬된다. */
+ 	margin: 10px auto;
+}
+a{
+	font-size: 60px;
+	text-decoration: none;
+}
+a:link{
+	color: green;
+}
+a:visited{
+	color: black;
+	background-color: green;
+}
+a:hover{
+	color:white;
+	background-color: purple;
+	cursor: progress;
+}
+</style>
+</head>
+<body>
+	<div>
+		여기는 DIV태그
+	</div>
+	<h1>제목이다.</h1>
+	<p>이거슨 문단 This is a paragraph.이거슨 문단 This is a paragraph.이거슨 문단 This is a paragraph.이거슨 문단 This is a paragraph.이거슨 문단 This is a paragraph.이거슨 문단 This is a paragraph.이거슨 문단 This is a paragraph.이거슨 문단 This is a paragraph.</p>
+	<a href="safd">여기로!</a>
+</body>
+</html>

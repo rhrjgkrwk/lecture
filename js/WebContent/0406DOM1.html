@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Shopping</h1>
+	<h3>Item List</h3>
+
+	<!-- 	//DOM구조가 태그를 읽는 순서. -->
+	<ul id="mart">
+		<!-- [0] 태그 뒤의 공백(줄바꿈) -->
+		<!-- [1] li태그 -->
+		<li>Item one</li>
+		<!-- [2] 태그 뒤의 공백(줄바꿈) -->
+		<!-- [3] li태그 -->
+		<li>Item two</li>
+		<!-- [4] 태그 뒤의 공백(줄바꿈) -->
+		<!-- [5] li태그 -->
+		<li>Item three</li>
+		<!-- [6] 태그 뒤의 공백(줄바꿈) -->
+	</ul>
+
+
+	<form action="" name="f1">
+		<input id="i" name="n" type="text"> <!-- NAME은 GET 전송시 URL에 표시되는 이름 -->
+		<input id="i2" name="n1" type="password"> 
+		<input type="submit" value="전송" onclick="myprocess()"><!--  value에 submit을 주면 submit으로 작동.. -->
+		<!-- submit type은 기본적으로 action을 수행하는 기능이 내장. 뒤에 onclick 속성을 주면 기본 action + myprocess가 수행된다. -->
+	</form>
+<!-- 
+	1. getElementById
+	2. getElementByTagName
+	3. Tag에 name이라는 attr를 주어 name으로 호출
+	4. getElementsByName
+	5. querySelectorAll() css selector 처럼 쓸 수 있다.
+
+ -->
+
+	<script>
+		function myprocess(){
+			alert(document.f1.n1.value); //name 속성으로 가져오기. 순서대로 내려가야한다(태그마다 이름을 다 붙여주어야함.. 비효율적이다.). 
+			alert(document.f1.n2.value);
+			var tmp = document.getElementsByTagName("n1");
+			alert(tmp[0]);
+		}
+		/* var mart = document.getElementById("mart").childNodes; //선택된 태그의 모든 자식들을 가져온다.
+		for (var i = 0; i < mart.length; i++) {
+			if (mart[i].nodeType == 1)
+				//DOM은 html을 객체화
+				//document.write(mart[i]+" "+mart[i].nodeName +" "+ mart[i].nodeType+" "+mart[i].innerHTML+"<br>");
+				 //               ㄴ객체정보출력    ㄴ태그의 이름                     ㄴ태그의 타입(1239)       ㄴ태그 내부 내용  
+		} */
+		//태그 이름으로 검색해보자. - 부모자식 관계에 기반한 탐색보다 훨씬 펺다ㅏ. 전자의 경우 작업이 비효율적이므로 권고하지 않는다.
+		var liList = document.getElementsByName("li");
+		for (var i = 0; i < liList.length; i++) {
+			document.write(liList[i] + " " + liList[i].nodeName + " "
+					+ liList[i].nodeType + " " + liList[i].innerHTML + "<br>");
+		}
+	</script>
+</body>
+</html>

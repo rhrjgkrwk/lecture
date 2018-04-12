@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Board</title>
+<style type="text/css">
+	h1 {
+		font-family: fantasy;
+		font-size: 90px;
+		text-align: center;
+		background-color: skyblue;
+		color: red;
+		
+		border: solid 2px green;
+	}
+	table {
+		margin: 15px auto;
+		border-collapse: collapse;
+	}
+	td{
+		text-align: center;
+		vertical-align: center;
+		border: solid 1px green;
+		width: 20%;
+	}
+</style>
+<!-- 1:게시물1:이창희:2 -->
+</head>
+<body>
+	<h1>My Board</h1>
+	<script>
+	var str = "How are you doing today?";
+		function printTable(x) {
+			for (var i = 0; i < x.length; i++) {
+				document.write('<tr>');
+				var out = x[i].split(":");
+				for (var j = 0; j < out.length; j++) {
+					document.write('<td>');
+					document.write(out[j]);
+					document.write('</td>');
+				}
+				document.write('</tr>');
+			}
+		}
+		var data = new Array();
+		for (var i = 0; i < 5; i++) {
+			data[i] = prompt((i+1) + '번째 게시물을 작성해보자.');
+		}
+		document.write('<table>');
+		printTable(data);
+		document.write('</table>');
+	</script>
+</body>
+</html>

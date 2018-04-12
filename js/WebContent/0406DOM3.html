@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+</style>
+</head>
+<body>
+	<div>여기는 DIV</div>
+	<input type="button" value="내용확인" onclick="getDiv()">
+	<input type="button" value="내용변경" onclick="setDiv('div 태그를 변경한다.')">
+	<input type="button" value="이미지" onclick="setImg()">
+	<input type="button" value="브레이크" onclick="stopAuto()">
+	<input type="button" value="속도++" onclick="autoChange()">
+	<input type="button" value="크기변경" onclick="changeStyle()">
+	<br>
+	<img alt="invisible" src="images/cat.jpg" width="600px" height="600px">
+
+	<script type="text/javascript">
+		var count = 0;
+		var images = [ "bono.jpg", "cat.jpg", "cat1.jpg", "cat2.jpg",
+				"cat3.jpg", "cat4.jpg", "cat5.jpg" ];
+		function getDiv() {
+			alert(document.getElementsByTagName("div")[0].innerHTML);
+		}
+		function setDiv(str) {
+			document.getElementsByTagName("div")[0].innerHTML = str;
+		}
+		function setImg() {
+			//함수마다 arguments 라는 배열이 내장되어있어 매개변수로 전달된 인자들을 관리한다.
+			//넘어온 매개변수의 갯수나 자료형을 판별하여 그에 맞는 작업을 실행.
+			//JS는 메서드 오버로딩이 불완전하여 args 배열을 이용한다 
+			document.getElementsByTagName("img")[0].src = "images/"
+					+ images[count];
+			count = (count + 1) % (images.length);
+		}
+		function changeStyle() {
+			//함수마다 arguments 라는 배열이 내장되어있어 매개변수로 전달된 인자들을 관리한다.
+			//JS는 메서드 오버로딩이 불완전하여 args 배열을 이용한다 
+			document.getElementsByTagName("img")[0].style = "border-radius: "
+					+ (count * 20+10) + "px; border: solid 20px rgb(" + count * 1
+					+ ", " + count * 10 + ", " + count * 20 + ");";
+			count = (count + 1) % (images.length);
+		}
+		function autoChange() {
+			document.getElementsByTagName("img")[0].src = "images/"
+					+ images[count];
+			document.getElementsByTagName("img")[0].style = "border-radius: "
+				+ (count * 20+10) + "px; border: solid 20px rgb(" + count * 30
+				+ ", " + count * 10 + ", " + count * 5 + ");";
+			count = (count + 1) % (images.length);
+			id = setTimeout(autoChange, 100);
+		}
+		function stopAuto() {
+			clearTimeout(id);
+		}
+		autoChange();
+	</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function check() {
+			//입력 정보를 가져오자.
+			var date = new Date(document.getElementById("dateinput").value);
+		
+			document.write('<h1>'+date+'</h1><br>');
+			document.write('<h1>'+date.toLocaleTimeString()+'</h1><br>');
+			//현재 
+			var now = new Date();
+			
+			//입력된 날짜와 현재를 비교해보자.
+			//alert(parseInt((date.getTime()-now.getTime())/(3600000*24))+"일 남았다."); //ms 단위 리턴 - 시간으로 변환.
+			
+			var diff = parseInt((date.getTime()-now.getTime())/(3600000*24));
+			if (diff > 0) {
+				document.write('<h1>'+diff+'일 남았다.</h1><br>');
+			} else if (diff==0 || diff==-1){
+				document.write('<h1>오늘이다.</h1><br>');
+			} else {
+				document.write('<h1>'+(-diff)+'일 지났다.</h1><br>');
+			}
+			
+		}
+		
+		
+		// 	<<<<내장 객체 Date를 배워보자.>>>>>
+
+		// 	JS에서도 overloading이 가능하다.
+		var now = new Date(); //현재 시간.
+		// 	var now = new Date(2018,1,1,1,1,1); //사용자 지정.
+		// 	var now = new Date(100000); //기준일(1970/1/1)로부터 ms지난 시간.
+		// 	var now = new Date(2016,1,24); //년월일만 써도 무방.
+
+		document.write(now.toString() + '<br>');//전체
+		document.write(now.toLocaleString() + '<br>');//전체 현지 기준
+		document.write(now.toLocaleDateString() + '<br>');//현지기준날짜만
+		document.write(now.toLocaleTimeString() + '<br>');//시간만
+
+		var day = [ '일', '월', '화', '수', '목', '금', '토' ];
+		document.write(day[now.getDay()] + '<br>');//요일을 숫자로 준다. 나라마다 요일을 일컫는게 다 다르므로(일-토 : 0-6)
+
+		document.write(now.getHours() + '<br>');
+
+		//월은 0부터 시작!
+		var date1 = new Date(2018, 0, 31, 12, 34, 56);
+		document.write(date1.toLocaleString() + '<br>');
+	</script>
+
+	<input id="dateinput" type="datetime-local">
+	<input type="button" value="유효검사" onclick="check()">
+
+
+</body>
+</html>

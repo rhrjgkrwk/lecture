@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>Insert title here</title>
+
+<style>
+td {
+	padding: 3px;
+	text-align: center;
+}
+table {
+	margin: 5px auto;
+	width: 100%;
+}
+div {
+	margin: 20px auto;
+	width: 180px;
+}
+h3 {
+	text-align: center;
+}
+</style>
+
+<script type="text/javascript">
+	var str=""; //계산식 누적 + clear 전까지 누적
+	function calculate(){ //enter누르면 display에 계산결과 출력
+		document.getElementById("display").value = eval(str);
+	}
+
+	function setExpression(op) {
+		var tmp = op.match(/[\+\-\*/]/);
+		if (tmp != null) {
+			if (isNaN(str[str.length-1])) {
+				document.getElementById("display").value = "숫자를 먼저 입력해라.";
+			}
+			else {
+				str+=op;
+				document.getElementById("display").value = str;
+			}
+		}
+		else {
+			str+=op;
+			document.getElementById("display").value = str;
+		}
+	}
+	function clearAll(){
+		var str = "";
+		document.getElementById("display").value = str;
+	}
+</script>
+
+</head>
+<body>
+	<div>
+		<h3 class="bg-primary">Calculator</h3>
+		<input type="text" class="form-control" id="display" placeholder="계산식을 입력하자">
+		<table>
+			<tr>
+				<td><input class="btn" type="button" value="7" onclick="setExpression('7')"></td>
+				<td><input class="btn" type="button" value="8" onclick="setExpression('8')"></td>
+				<td><input class="btn" type="button" value="9" onclick="setExpression('9')"></td>
+				<td><input class="btn" type="button" value="/" onclick="setExpression('/')"></td>
+			</tr>
+			<tr>
+				<td><input class="btn" type="button" value="4" onclick="setExpression('4')"></td>
+				<td><input class="btn" type="button" value="5" onclick="setExpression('5')"></td>
+				<td><input class="btn" type="button" value="6" onclick="setExpression('6')"></td>
+				<td><input class="btn" type="button" value="*" onclick="setExpression('*')"></td>
+			</tr>
+			<tr>
+				<td><input class="btn" type="button" value="1" onclick="setExpression('1')"></td>
+				<td><input class="btn" type="button" value="2" onclick="setExpression('2')"></td>
+				<td><input class="btn" type="button" value="3" onclick="setExpression('3')"></td>
+				<td><input class="btn" type="button" value="-" onclick="setExpression('-')"></td>
+			</tr>
+			<tr>
+				<td><input class="btn" type="button" value="0" onclick="setExpression('0')"></td>
+				<td><input class="btn" type="button" value="+" onclick="setExpression('+')"></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input class="btn" width="100%" type="button"
+					value="Clear"></td>
+				<td colspan="2"><input class="btn" width="100%" type="button"
+					value="Enter" onclick="calculate()"></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

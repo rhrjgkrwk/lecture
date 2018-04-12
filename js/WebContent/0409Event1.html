@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>EVENT!!!</title>
+</head>
+<!-- 
+	<Event 처리를 배워보자.>
+	- event : html 요소에 사용자가 개입(키보드, 마우스 등)하거나 브라우저 변화(load)를 주는 동작
+	  load event : HTML 파일이 브라우저에 로드 완료된 상태
+	1. 마우스 : 오버, 아웃, 클릭, 덥클
+	2. 키보드 : 키 누른다. 누르고 있다. 떼어낸다.(세가지 구분 동작)
+	
+	<Event 구성>
+	* 이벤트 소스 : 이벤트가 발생한 객체(ex button)
+	* 이벤트 발생 : click, over, out, etc
+	* 이벤트 핸들러 : event 구현 함수
+	
+	
+	
+	1. 마우스 
+		- click
+		- focus(onfocus/onblur)
+ -->
+ 
+<script type="text/javascript">
+function a(){ //요렇게 하면 문서가 전부 로드된 뒤 스크립트를 실행하게 된다.
+	alert(1);
+	document.getElementById("msg").innerHTML="sdagasdgsa";
+}
+// alert(1);
+// document.getElementById("msg").innerHTML="sdagasdgsa"; //아직 div가 로드 되지 않아 실행안됨...
+</script>
+ 
+<body onload="a()">
+	<div id="msg"></div>
+	
+	
+	
+	
+</body>
+</html>

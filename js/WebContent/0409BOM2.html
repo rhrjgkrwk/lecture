@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//BOM : 브라우저 객체 모델
+	var chk; //새 window 객체를 담을 변수.
+	var to; //size timeout
+	var mv; //move timeout
+	function idcheck() {
+		chk = window.open('0409idcheck.html', 'blank',
+				'width=300, height=300, top=100, left=300');
+		//chk.close(); //새롭게 열린 창을 닫느다.
+	}
+
+	function myMove() {
+		chk.moveBy(Math.random() * 200 - 100, Math.random() * 200 - 100);
+		to = setTimeout("myMove()", 100);
+	}
+	function stopMoving() {
+		clearTimeout(to);
+		clearTimeout(mv);
+	}
+
+	function resizeWindow() {
+		chk.resizeTo(Math.random() * 300 + 300, Math.random() * 300 + 300);
+		mv = setTimeout("resizeWindow()", 100);
+	}
+	
+	function browserInfo(){//반응형 웹 만들때 이용된다.
+		for (var key in navigator) {
+			document.getElementById("navigator1").innerHTML += key + ' ' + navigator[key] +'<br>';
+		}
+	}
+	//chk.resizeTo(screen.availWidth, screen.availHeight) //창을 최대 크기로 바꾼다.
+</script>
+</head>
+<body>
+	<input type="text" id="id" placeholder="id">
+	<input type="button" value="중복검사" onclick="idcheck()">
+
+
+	<!-- 	새창 이동 -->
+	<input type="button" value="이동" onclick="myMove()">
+	<input type="button" value="그만!" onclick="stopMoving()">
+
+	<!-- 	새창크기변경 -->
+	<input type="button" value="크기변경" onclick="resizeWindow()">
+
+
+
+	<!-- 	location 객체를 사용해보자. : -->
+	<input type="button" value="사이트변경"
+		onclick="chk = chk.location.replace('http://www.google.com')">
+
+
+	<!-- 	navigator 브라우저 정보 -->
+	<input type="button" value="브라우저정보" onclick="browserInfo()">
+
+	<p id="navigator1"></p>
+
+</body>
+</html>

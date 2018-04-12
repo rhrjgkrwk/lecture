@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//text 입력 내용이 숫자만으로 구성되어 있는지 검증해서 결과를 div태그에 출력해보자.
+function isValid(){
+	var str = document.getElementById("in").value;
+	
+	if (!isNaN(str)) { //number형태가 아닌지 판별해준다. true = not a num
+		document.getElementById("out").innerHTML = "Valid";
+	} else {
+		document.getElementById("out").innerHTML = "Invalid";
+	}
+	
+	
+// 	if (str.match(/[0-9]+/ig)) {//valid
+// 		document.getElementById("out").innerHTML = "Valid";
+// 	}
+// 	else { //invalid
+// 		document.getElementById("out").innerHTML = "Invalid";
+// 	}
+
+}
+
+</script>
+</head>
+<body>
+	<h3 id="test"></h3>
+	<input type="text" id="in" pattern="\w+">
+	<input type="button" value="isValid" onclick="isValid()">
+
+
+	<div id="out">검증 결과는 여기에 출력된다.</div>
+	<!-- 	
+<정규표현식>
+[0-9A-Za-z] = \w
+{1,} = + 
+
+-->
+	<script type="text/javascript">
+		/*
+			// 		String 내장객체를 알아보자.
+			var s1 = new String("java");
+			//문자열의 길이
+			s1.length;
+			s1 = "java-sc-babo-meong-cheongi"
+
+			//split
+			s1.split("-"); //-로 나누어라.
+			s1 = "ja:va-s:c-ba:bo-me:ong-che:ongi"
+			document.getElementById("test").innerHTML += s1.split("-:"); //-또는:로 나누어라. 아무것도 안주면 공백으로 분리하는 것.
+
+			//case 변환
+			document.getElementById("test").innerHTML += '<br>' + s1.toLowerCase();
+			document.getElementById("test").innerHTML += '<br>' + s1.toUpperCase();
+
+			//문자열 연결 concat과 +연산자는 같은 결과.
+			s1.concat("메롱");
+			s1 += "메롱";
+			document.getElementById("test").innerHTML += '<br>' + s1;
+			//문자열 내 문자열 검색
+			document.getElementById("test").innerHTML += '<br>'
+					+ s1.indexOf("me", 0);
+			//문자열 내 매칭되는 덩어리 탐색해서 리턴 
+			// 		s1.match(/찾을 문자열 내용/options[ig...]); //정규표현식이 들어갈 수도 있다.
+			document.getElementById("test").innerHTML += '<br>' + s1;
+			document.writeln(s1.match(/on/ig)); //없으면 null을 리턴한다.
+			
+		 */
+	</script>
+</body>
+</html>

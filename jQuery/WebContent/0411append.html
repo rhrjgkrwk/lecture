@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Append</title>
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/bootstrap.js"></script>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<script type="text/javascript">
+$('document').ready(function(){
+	/* 
+	var tag="<img src='images/cat4.jpg'>";
+	$('body').append(tag);//선택된 태그 내부의 마지막에 추가.
+	
+	var tag1="<img src='images/cat3.jpg'>";
+	$('body').prepend(tag1);//선택된 태그 내부의 맨앞에 추가.
+	
+	$('img').css('width','300px');
+	$('img').css('height','400px');
+	*/
+	
+	//ready가 시작되자 마자 img arr에 파일을 넣어두고 쭉 뿌려보자.
+	var imgList = ['cat','cat1','cat2','cat3','cat4','cat5','bono'];
+	var tag=["<img src='images/",".jpg'>"];
+	
+ 	for (var i = 0; i < imgList.length; i++) {
+ 		$('body').append(tag[0]+imgList[i]+tag[1]);	
+ 	}
+
+	$('img').css('width','300px');
+	$('img').css('height','300px');
+	
+	setInterval( function(){$('body').append($('img:first'))} , 100); //0.1초에 한번씩 첫번째 이미지를 맨뒤로 보낸다.
+	setInterval(function(){$('img:last').remove()}, 2000) //2초에 한번씩 맨뒤 이미지를 삭제
+});
+
+</script>
+</head>
+<body>
+</body>
+</html>

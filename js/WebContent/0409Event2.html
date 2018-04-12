@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/bootstrap.css">
+<!-- <script type="text/javascript" src=""></script> -->
+<!-- <script type="text/javascript" src="js/bootstrap.js"> -->
+<script type="text/javascript">
+window.onload = function(){}
+function focusEvent(){
+	document.getElementById("id").value = "ABCD";
+}
+function blurEvent(){
+	var tmp = document.getElementById("id").value;
+	document.getElementById("id").value = tmp.toLowerCase();
+}
+
+//JS에서는 함수단위로 지역변수를 할당 --> if문 내에 선언한 변수를 if문 밖에서도 쓸 수 있다.
+function isValid(){ // 6 -10자 사이 특수문자 포함. maxlength를 지정해서 최대 길이 제한을 하고 + js를 이용하여 최소길이를 제한할 수도 있따.
+	var pw = document.getElementById("pw").value;
+	if (pw.length >= 6 && pw.length <= 10 && pw.match(/[!@#$%]/)) {
+		document.getElementById("pwchk").innerHTML="사용가능한 비밀번호다.";
+	}
+	else {
+		document.getElementById("pwchk").innerHTML="6-10자 사이, !@#$%^포함";
+	}
+}
+//function
+
+
+</script>
+	
+	
+</head>
+<body>
+	<div style="text-align: center;">
+		<input id="id" type="text" placeholder="ID" onfocus="focusEvent()" onblur="blurEvent()"><br>
+		<input id="pw" type="password" placeholder="PW" onblur="isValid()"><br>
+		<div id="pwchk"></div>
+<!-- 		radio 버튼 사용시 name을 같게 해주어야한다. -->
+		<input id="gender" name="gender" type="radio">M
+		<input id="gender" name="gender" type="radio">F<br>
+		
+		<input type="button" value="체크" onclick="isValid()">
+	</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div {
+	margin: 20px auto;
+	text-align: center;
+	width: 30%;
+}
+
+input {
+	width: 100%;
+	text-align: center;
+}
+</style>
+<script>
+	var count = 0;
+	function addLink() {
+		var site = document.getElementById("site").value;
+		var url = document.getElementById("url").value;
+		var links = document.getElementsByTagName("a");
+		links[count].href = url;
+		links[count].innerHTML = site;
+		count = (count + 1) % links.length;
+	}
+</script>
+</head>
+<body>
+	<div>
+		<input id="site" type="text" placeholder="site name"> <br>
+		<input id="url" type="text" placeholder="url"> <br> <input
+			type="button" value="추가" onclick="addLink()"> <a></a> <br>
+		<a></a> <br> <a></a> <br> <a></a> <br> <a></a> <br>
+	</div>
+
+
+</body>
+</html>

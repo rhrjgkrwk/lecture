@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인창</title>
+</head>
+<body>
+<h1> 로그인부터 하세요</h1>
+<table border="2">
+<tr> <td>아이디입력:</td> 
+<td><input type= "email" pattern="[a-zA-Z0-9]+@[a-zA-Z0-9]+\.(com|net|org)"  autofocus placeholder="아이디" autocomplete required/>  </td>
+<td rowspan="2"><input type= button value="로그인버튼"> </td>
+</tr>
+
+<tr><td>암호입력:</td>
+<td><input type=password /></td></tr> 
+<tr><td><input type="hidden" value="0" />
+</td></tr>
+
+
+<tr>
+<td>전화번호 : </td>
+<td><input type="text" pattern="^(010|011|019|016)-\d{3,4}-d{4}$"></td>
+
+</tr>
+
+
+<tr><td>추가정보: 성별 선택 </td>
+<td><input type=radio name="gender">남자 
+<input type=radio name="gender">여자</td>
+<!-- radio는 같은 이름을 부여해서 하나만 선택하게 함 -->
+ </tr>
+
+<tr><td>추가정보: 자신있는 과목(복수선택 가능) </td>
+<td>
+<input type="checkbox" name="subject">자바 
+<input type="checkbox" name="subject">오라클
+<input type="checkbox" name="subject">html
+<input type="checkbox" name="subject">javascript
+</td>
+<!-- radio는 같은 이름을 부여해서 하나만 선택하게 함 -->
+ </tr>
+<tr>
+<td><input type=submit value="서브밋버튼"></td>
+<td><input type="image"  src="google.png"></td>
+<td><input type="reset" value="입력값초기화버튼"></td> 
+
+</table>
+
+<!-- <p>아이디입력: <input type= text /> </p>
+<p>암호입력: <input type=password /> </p>
+<p><input type= button value="로그인버튼"> </p> -->
+
+
+<div style="color:blue; border: red 2px dotted;">
+<!-- b,em, strong 이 다같이 굵게해주는거 -->
+<h1>test 파일입니다.</h1>
+<b><u><i>안녕하세요? </i> </u></b> <br>
+텍스트는 바디 태그 내부에 들어갈 수 있습니다.
+<p> 이것은 하나의 문단입니다. </p>
+</div>
+
+
+<div style="height:20px; background-color:pink"></div>
+<div style="height:20px; background-color:black"></div>
+<div style="height:20px; background-color:white"></div>
+<div style="height:20px; background-color:#00ff00"></div>
+
+<!--div태그는 줄 변경하면서 작동하지만 
+span태그는 한줄에 출력함 -->
+<span style="width:30px; height:20px; background-color:#ffee99"></span>
+<span style="width:30px; height:20px; background-color:black"></span>
+<span style="width:30px; height:20px; background-color:white"></span>
+<span style="width:30px; height:20px; background-color:#00ff00"></span>
+
+<select>
+	<option>asgasg</option>
+	<option selected>안녕</option>
+</select>
+
+
+</body>
+</html>

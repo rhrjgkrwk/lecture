@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	// 	주소를 입력받아 공백으로 분할하자.
+	function divide() {
+		var addr = document.getElementById("addr").value;
+		var res = addr.split(" ");
+		document.getElementById("out").innerHTML = res.join("<br>");
+	}
+	
+	function changeStr(a, b){
+		a = "자바";
+		b = "자바스크립두";
+	}
+	
+	
+	var str1 = "java";
+	var str2 = new String("java");
+	document.writeln(typeof str1 + '<br>'); //string
+	document.writeln(typeof str2 + '<br>'); //obj
+	
+	
+	//JS에서 함수 호출시 매개변수 String은 call by value 형태로 전달.
+	changeStr(str1, str2);
+	document.writeln(str1 + '<br>');
+	document.writeln(str2 + '<br>');
+</script>
+</head>
+<body>
+	<input type="text" id="addr">
+	<input type="button" value="분할" onclick="divide()">
+	<div id="out"></div>
+</body>
+</html>

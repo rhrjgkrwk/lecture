@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		f1(); //아래에 있는 변수 함수만 호출된다.
+	
+// 		유명 함수의 경우, f1 함수 내용 같이 할당 - 
+// 		실행이전에 메모리에 로드된다. 
+// 		즉, 함수 선언 이전에 호출도 가능하다. 
+		
+// 		하지만 
+// 		무명 함수는 실행 시간에 메모리에 올라가므로
+// 		변수 기반 함수 호출 시 선언 이후에만 호출이 가능하다.
+
+// 		따라서 함수 호이스팅이 필요. 
+// 		호이스팅 : 스크립트 태그의 시작부분에 모둔 함수를 선언/정의
+		
+		function f1() { //유명 함수 f1을 주석처리하면 아무것도 실행되지 않는다.
+			alert("f 1 함 수 호 출"); 
+		}
+
+		var f1 = function() {
+			alert("f 1 변 수 함 수 호 출");
+		};
+	</script>
+</body>
+</html>

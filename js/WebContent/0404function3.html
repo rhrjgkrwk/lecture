@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var i = 100;
+		function f1() {
+			var j = 20;
+			k = 30; //var 키워드 생략된 변수는 함수 내/외부를 막론하고 무조건 전역변수로 취급.
+			document.write(j+"<br>");
+		}
+		function f2() {
+			this.k=40; //전역변수와 지역변수를 구분하기 위해서는 this. 키워드를 사용해얗나다.
+			var k = 50; //지역변수 k 우선.
+			document.write(k+"지역 변수 출력<br>"); //지역변수 k를 출력한다.
+			document.write(this.k+"전역 변수 출력<br>"); //지역변수 k를 출력한다.
+		}
+		f1();
+		document.write(i+"<br>");
+		f2();
+		document.write(k+"<br>");
+		
+		
+		
+		
+	</script>
+</body>
+</html>
