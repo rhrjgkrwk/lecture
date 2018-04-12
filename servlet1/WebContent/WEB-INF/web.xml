@@ -29,4 +29,44 @@
     <servlet-name>Calc</servlet-name>
     <url-pattern>/calc</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LifeCycleServlet</display-name>
+    <servlet-name>LifeCycleServlet</servlet-name>
+    <servlet-class>first.LifeCycleServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LifeCycleServlet</servlet-name>
+    <url-pattern>/LifeCycleServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>TestServlet</display-name>
+    <servlet-name>TestServlet</servlet-name>
+    <servlet-class>test.TestServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TestServlet</servlet-name>
+    <url-pattern>/TestServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Login</display-name>
+    <servlet-name>Login</servlet-name>
+    <servlet-class>test.Login</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Member</display-name>
+    <servlet-name>Member</servlet-name>
+    <servlet-class>test.Member</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Member</servlet-name>
+    <url-pattern>/member</url-pattern>
+  </servlet-mapping>
 </web-app>
