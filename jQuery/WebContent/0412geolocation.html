@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/bootstrap.js"></script>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<title>Insert title here</title>
+<script type="text/javascript">
+	$('document').ready(function() {
+		$('input:button').on('click', function() {
+//getCurrentPosition
+//(위치정보를 가져오는데 성공 시 호출할 함수, 오류 시 호출할 함수, 위치를 가져올 채널 선택(안쓰면 현재 환경 하에 최적의 방법으로 가져옴));
+			navigator.geolocation.getCurrentPosition(suc, err);
+		});
+
+		function suc(pos) { //성공했을떄 호출할 함수 - 위치 정보를 매개변수로 받는다.
+			var ltt = pos.coords.latitude;
+			var lgt = pos.coords.longitude;
+			$('#res').html("나의 위도 : "+ltt+" 나의 경도 : "+lgt);
+		}
+		function err(e) { //에러발생시 호출할 함수 - error정보를 매개변수로 받는다.
+			$('#res').html(e.code+" : "+e.message);
+		}
+	});
+</script>
+</head>
+<body>
+	<input type="button" class="btn btn-success" value="위치">
+	<div id="res" class="text text-primary">위치정보</div>
+</body>
+</html>

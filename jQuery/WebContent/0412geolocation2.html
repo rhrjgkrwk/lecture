@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/bootstrap.js"></script>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<!-- <script src="http://maps.google.com/maps/api/js?key=AIzaSyBuMhc367ia1i3QryuC2LLtWT5WnSSNwF8"></script> -->
+<script async defer
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtiiAHM89H26vVWFnN9bqOs2dMOwXnMRw&callback=initMap"></script>
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	$('document').ready(function() {
+		$('#start').on('click', function() {
+			id = navigator.geolocation.watchPosition(suc, err, { //옵션을 주자.
+				enableHighAccuracy : true,
+				maximumAge : 0
+			});
+		});
+		$('#stop').on('click', function() {
+			navigator.geolocation.clearWatch(id);
+			$('#result').html("위치 추적을 종료한다.");
+		});
+
+		function suc(pos) {//위치 정보 획득 성공
+			var lat = pos.coords.latitude;
+			var lng = pos.coords.longitude;
+			//지도에 표시.
+			$('#result').html("나의 위도 : " + lat + " 나의 경도 : " + lng);
+			initMap(lat, lng);
+		}
+
+		function err(e) { //위치 정보 획득 실패
+			$('#result').html(e.code + " : " + e.message);
+		}
+
+		function initMap(latNow, lngNow) {
+			var now = new google.maps.LatLng(latNow, lngNow); //객체를 생성해서 위치 데이터를 넘겨도 되고
+			/* var now = { //이런식으로 직접 변수에 값ㅎ을 할당해서 넘겨두 된다.
+				lat : latNow,
+				lng : lngNow
+			}; */
+			var map = new google.maps.Map(document.getElementById('map'), {
+				//mapTypeId:google.maps.MapTupeId.ROADMAP,
+				zoom : 17,
+				center : now
+			});
+			var marker = new google.maps.Marker({
+				title: "나", //marker에 mouseover할때 '나'라고 뜬다. 
+				position : now,
+				map : map
+			});
+		}
+
+	});
+</script>
+<style type="text/css">
+	body {
+		text-align: center;
+		padding: 20px;
+	}
+	div {
+		text-align: center;
+		margin: 20px auto;
+	}
+</style>
+</head>
+<body>
+	<!-- <input type="button" class="btn btn-success" value="위치">
+	<div id="res" class="text text-primary">위치정보</div> -->
+
+	<button class="btn btn-primary" id="start">시작</button>
+	<button class="btn btn-primary" id="stop">중단</button>
+	<div id="result"></div>
+	<div id='map' style="width: 500px; height: 500px">맵 로딩 예정입니다.</div>
+
+</body>
+</html>
