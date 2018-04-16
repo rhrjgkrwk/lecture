@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="css/bootstrap.css">
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+form {
+	margin: 40px auto;
+	text-align: center;
+	width: 70%;
+	border: solid 1px lightgray;
+	border-radius: 7px;
+	padding: 15px;
+}
+
+input {
+	text-align: center;
+	width: 100%;
+}
+input[type=radio] {
+	text-align: center;
+	width: 10%;
+}
+
+input[type=checkbox] {
+	text-align: center;
+	width: 10%;
+} 
+h2 {
+	text-align: center;
+	text-decoration: bold;
+}
+
+</style>
+</head>
+<body>
+	<h2>개인정보 입력(GET)</h2>
+	<form action="Person" method=get>
+		<input type="text" class="form-control" name="name" placeholder="name"><br>
+		<input type="text" class="form-control" name="id" placeholder="id"><br>
+		<input type="password" class="form-control" name="pw" placeholder="pw"><br>
+
+		<input name="sex" type="radio" value="남">남 <input name="sex" type="radio" value="여">여 <br>
+		메일수신여부: 
+		<input name="mailing" type="checkbox" value="광고">광고 
+		<input name="mailing" type="checkbox" value="공지">공지 
+		<input name="mailing" type="checkbox" value="배송">배송<br> 
+		
+		직업: <select name="job">
+			<!-- mutiple="multiple" 이런것도 있단다.-->
+			<option>회사원</option>
+			<option>대학생</option>
+			<option>유치원생</option>
+			<option>없음</option>
+		</select><br>
+		<input type="submit" class="btn btn-success"><br>
+	</form>
+	<h2>개인정보 입력(POST)</h2>
+	<form action="Person" method=post>
+		<input type="text" class="form-control" name="name" placeholder="name"><br>
+		<input type="text" class="form-control" name="id" placeholder="id"><br>
+		<input type="password" class="form-control" name="pw" placeholder="pw"><br>
+
+		<input name="sex" type="radio" value="남">남 <input name="sex" type="radio" value="여">여 <br>
+		메일수신여부: 
+		<input name="mailing" type="checkbox" value="광고">광고 
+		<input name="mailing" type="checkbox" value="공지">공지 
+		<input name="mailing" type="checkbox" value="배송">배송<br> 
+		
+		직업: <select name="job">
+			<!-- mutiple="multiple" 이런것도 있단다.-->
+			<option>회사원</option>
+			<option>대학생</option>
+			<option>유치원생</option>
+			<option>없음</option>
+		</select><br>
+		<input type="submit" class="btn btn-success"><br>
+	</form>
+</body>
+</html>

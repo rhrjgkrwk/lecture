@@ -1,4 +1,4 @@
-package first;
+package test;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -11,13 +11,13 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class Calc
  */
-public class Calc extends HttpServlet {
+public class CalcServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Calc() {
+    public CalcServlet() {
         super();
         // TODO Auto-generated constructor stub
     }

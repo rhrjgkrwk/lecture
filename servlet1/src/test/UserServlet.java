@@ -8,20 +8,38 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.UserDao;
+import vo.User;
 
 /**
- * Servlet implementation class Login
+ * Servlet implementation class UserServlet
  */
-public class Login extends HttpServlet {
+public class UserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private UserDao ud = null;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public Login() {
+	public UserServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
+	@Override
+	public void init() throws ServletException {
+		// TODO Auto-generated method stub
+		System.out.println("init and getConn");
+		UserDao.getConn();
+	}
+	
+	@Override
+	public void destroy() {
+		// TODO Auto-generated method stub
+		System.out.println("closeConn");
+		UserDao.closeConn();
+	}
+	
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
@@ -30,27 +48,24 @@ public class Login extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		// response.getWriter().append("Served at:
-		// ").append(request.getContextPath());
-		// User u = new User(request.getParameter(""), request.getParameter(""),
-		// request.getParameter(""), request.getParameter(""),
-		// request.getParameter(""));
 		response.setContentType("text/html;charset=utf-8");
-		String id = "";
-		String pw = "";
-		String ids = "java servlet jsp jquery html";
-		
-		id = request.getParameter("id");
-		pw = request.getParameter("pw");
-		
 		PrintWriter out = response.getWriter();
-		if (ids.contains(id) && ids.contains(pw)) {
-			out.println("<h1 style='background-color: green; text-decoration: bold; color: white;'> 로그인 성공 </h1>");
+//		UserDao.getConn();
+		ud = new UserDao();
+		User u = new User(request.getParameter("id"), request.getParameter("name"), request.getParameter("pw"),
+				request.getParameter("phone"), request.getParameter("email"));
+		if (ud.isDuplicate(u)) {
+			out.println(u.getId()+"는(은) 사용할 수 없는 아이디다.");
 		}
 		else {
-			out.println("<h1 style='background-color: red; text-decoration: bold; color: white;'> 로그인 실패 </h1>");
+			ud.insertUser(u);
+			out.println(u.getId()+"는(은) 정삭적으로 등록되었다.");
 		}
-		out.close();
+		
+		System.out.println("doget");
+		
+		response.sendRedirect("memberlist.jsp");
+		
 	}
 
 	/**
