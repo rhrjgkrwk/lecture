@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="css/bootstrap.css">
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+form {
+	margin: 40px auto;
+	text-align: center;
+	width: 50%;
+	border: solid 1px lightgray;
+	border-radius: 7px;
+	padding: 15px;
+}
+
+input {
+	text-align: center;
+	width: 100%;
+}
+input[type=radio] {
+	text-align: center;
+	width: 10%;
+}
+
+input[type=checkbox] {
+	text-align: center;
+	width: 10%;
+} 
+h1 {
+	font-family:fantasy;
+	font-size: 50px;
+	text-align: center;
+	text-decoration: bold;
+}
+
+</style>
+</head>
+<body>
+	<h1>USER</h1>
+	<form action="user.jsp" method=get>
+		<input type="text" class="form-control" name="id" placeholder="id"><br>
+		<input type="password" class="form-control" name="pw" placeholder="pw"><br>
+		<input type="text" class="form-control" name="name" placeholder="name"><br>
+		<input type="email" class="form-control" name="email" placeholder="email"><br>
+		<input type="text" class="form-control" name="phone" placeholder="phone"><br>
+		<input type="submit" class="btn btn-success" value="Register Now!"><br>
+	</form>
+	
+</body>
+</html>
