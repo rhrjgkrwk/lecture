@@ -9,13 +9,26 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-<!-- 현재 프로젝트 안에 있는 모든 file이 context-parameter를 쓸 수 있다.   -->
   <context-param>
-	  <param-name>title</param-name>
-	  <param-value>spring web course</param-value>
+    <param-name>title</param-name>
+    <param-value>spring web course</param-value>
   </context-param>
-   <context-param>
-	  <param-name>enddate</param-name>
-	  <param-value>2018-06-14</param-value>
+  <context-param>
+    <param-name>enddate</param-name>
+    <param-value>2018-06-14</param-value>
   </context-param>
+  
+  
+  
+  
+  <servlet>
+    <description></description>
+    <display-name>ShareServlet</display-name>
+    <servlet-name>ShareServlet</servlet-name>
+    <servlet-class>share.ShareServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShareServlet</servlet-name>
+    <url-pattern>/share</url-pattern>
+  </servlet-mapping>
 </web-app>

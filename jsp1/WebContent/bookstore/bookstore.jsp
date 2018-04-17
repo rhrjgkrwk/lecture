@@ -75,7 +75,7 @@ input[type='submit'] {
 			<tr>
 				<td><%=bookList[i]%></td>
 
-				<td><input type="checkbox" value="<%=bookList[i]%>"></td>
+				<td><input type="checkbox" name="chk" value="<%=bookList[i]%>"></td>
 
 				<td><input class="form-control <%=bookList[i]%>"
 					name="<%=bookList[i]%>" type="text"

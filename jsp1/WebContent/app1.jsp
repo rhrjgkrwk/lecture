@@ -13,6 +13,20 @@
 	종료일은 
 	<%= application.getInitParameter("enddate") %>
 <!-- 	web.xml 의 context-param을 불러오는 방법 -->
+
+	<%	
+		if(application.getAttribute("count")!=null)	{
+			int count = (int)application.getAttribute("count");
+			out.println(count);
+			application.setAttribute("count", count+1);
+		}
+		else {
+			int count = 1;
+			out.println(count);
+			application.setAttribute("count", count+1);
+		}
+	%>
+
 	</h1>
 </body>
 </html>
