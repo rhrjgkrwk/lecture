@@ -18,17 +18,26 @@
     <param-value>2018-06-14</param-value>
   </context-param>
   
-  
-  
-  
   <servlet>
     <description></description>
     <display-name>ShareServlet</display-name>
     <servlet-name>ShareServlet</servlet-name>
-    <servlet-class>share.ShareServlet</servlet-class>
+    <servlet-class>servlets.ShareServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ShareServlet</servlet-name>
     <url-pattern>/share</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <description></description>
+    <display-name>UserServlet</display-name>
+    <servlet-name>UserServlet</servlet-name>
+    <servlet-class>servlets.UserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserServlet</servlet-name>
+    <url-pattern>/user</url-pattern>
   </servlet-mapping>
 </web-app>

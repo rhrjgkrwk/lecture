@@ -27,7 +27,7 @@
 	<%
 		int count = (int)application.getAttribute("count");
 		out.println(count);
-		application.setAttribute("count", count+1);
+		application.setAttribute("count", count+100);
 	
 	
 	%>

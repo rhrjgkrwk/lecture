@@ -30,9 +30,8 @@ input{
 }
 
 
-h1 {
+h1, h3 {
 	font-family: fantasy;
-	font-size: 50px;
 	text-align: center;
 	text-decoration: bold;
 }
@@ -53,6 +52,40 @@ div {
 
 	<div>
 		
+<!-- 			방금 추가된 친구 : userServlet에서 공유객체로 받는당.-->
+		<%
+			User newbie = (User)application.getAttribute("newbie");
+			if(newbie!=null){ //newbie 가 있을 때만.
+		%>
+		<h3>NEWBIE</h3>
+		<table class="table table-striped">
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Phone</th>
+				<th>Email</th>
+			</tr>
+			<tr>
+			<th>
+			<%=	newbie.getId()%>
+			</th>
+			<th>
+			<%=	newbie.getName()%>
+			</th>
+			<th>
+			<%=	newbie.getPhone()%>
+			</th>
+			<th>
+			<%=	newbie.getEmail()%>
+			</th>
+			</tr>
+			
+		</table>
+		<%
+			}
+		%>
+
+		
 		
 		<input type="button" class="btn btn-success" value="add member"
 			onclick="location.href='user.html'">
@@ -63,23 +96,21 @@ div {
 				<th>Phone</th>
 				<th>Email</th>
 			</tr>
-			<%
-				
-				
-				
 			
+			
+			<%
 				//회원정보 읽음
-				String id = request.getParameter("id");
-				String pw = request.getParameter("pw");
-				String name = request.getParameter("name");
-				String phone = request.getParameter("phone");
-				String email = request.getParameter("email");
-				User user = new User(id, name, pw, phone, email);
+// 				String id = request.getParameter("id");
+// 				String pw = request.getParameter("pw");
+// 				String name = request.getParameter("name");
+// 				String phone = request.getParameter("phone");
+// 				String email = request.getParameter("email");
+// 				User user = new User(id, name, pw, phone, email);
 
 				//UserDao 사용하여 데이터 INSERT
 				UserDao.getConn();
 				UserDao dao = new UserDao();
-				dao.insertUser(user);
+				//dao.insertUser(user);
 				ArrayList<User> ul = dao.getAllMember();
 				//응답 결과 출력.
 				

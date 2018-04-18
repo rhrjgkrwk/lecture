@@ -1,3 +1,4 @@
+<%@page import="java.util.HashMap"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" errorPage="amounterror.jsp"%>
 <!DOCTYPE>
@@ -43,8 +44,15 @@ h1 {
 	<div>
 	<table class="table">
 		<%
-			String[] bookList = { "java", "Oracle", "jquery", "Servlet", "Spring" };
-			int[] priceList = { 66000, 124000, 2929000, 35000, 2000 };
+			HashMap<String, Integer> map = new HashMap<>();
+			map.put( "java", 66000);
+			map.put( "Oracle", 124000);
+			map.put( "jquery", 2929000);
+			map.put( "Servlet", 35000);
+			map.put( "Spring", 2000);
+			
+			String [] bookList = request.getParameterValues("chk");
+			
 			int sum = 0;
 			for (int i = 0; i < bookList.length; i++) {
 				String tmp = request.getParameter(bookList[i]);
@@ -60,7 +68,7 @@ h1 {
 
 		
 		<%
-			sum += (num * priceList[i]);
+			sum += (num * map.get(bookList[i]));
 				} else {
 					//비정상
 					throw new Exception("자연수만 입력해라");
