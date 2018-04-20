@@ -117,5 +117,56 @@ public class UserDao {
 			}
 		}
 	}
+	public boolean loginCheck(String id, String pw) {
+		String sql = "SELECT ID FROM MEMBER WHERE ID=? AND PASSWORD=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.setString(2, pw);
+			rs = pstmt.executeQuery();
+			if (rs.next())
+				return true;
+			else
+				return false;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		} finally {
+			try {
+				if(pstmt!=null) pstmt.close();
+				if(rs!=null) rs.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	public User getUserById(String id) {
+		String sql = "SELECT * FROM MEMBER WHERE ID=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if (rs.next()){
+				return new User(rs.getString(1),rs.getString(3),rs.getString(2),rs.getString(4),rs.getString(5));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				rs.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return null;
+	}
+	
 	
 }
+

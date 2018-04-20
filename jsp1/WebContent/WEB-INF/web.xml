@@ -17,7 +17,6 @@
     <param-name>enddate</param-name>
     <param-value>2018-06-14</param-value>
   </context-param>
-  
   <servlet>
     <description></description>
     <display-name>ShareServlet</display-name>
@@ -28,8 +27,6 @@
     <servlet-name>ShareServlet</servlet-name>
     <url-pattern>/share</url-pattern>
   </servlet-mapping>
-  
-  
   <servlet>
     <description></description>
     <display-name>UserServlet</display-name>
@@ -39,5 +36,25 @@
   <servlet-mapping>
     <servlet-name>UserServlet</servlet-name>
     <url-pattern>/user</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ForwardServlet</display-name>
+    <servlet-name>ForwardServlet</servlet-name>
+    <servlet-class>servlets.ForwardServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ForwardServlet</servlet-name>
+    <url-pattern>/ForwardServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserLoginServlet</display-name>
+    <servlet-name>UserLoginServlet</servlet-name>
+    <servlet-class>servlets.UserLoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserLoginServlet</servlet-name>
+    <url-pattern>/userlogin</url-pattern>
   </servlet-mapping>
 </web-app>
